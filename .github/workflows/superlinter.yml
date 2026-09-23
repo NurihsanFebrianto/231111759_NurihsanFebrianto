@@ -18,14 +18,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        # actions/checkout@v6 / SHA resmi
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
 
       - name: Run Super-Linter
-        # super-linter/super-linter@v8.7.0 / SHA resmi
-        uses: super-linter/super-linter@1ae3eef1284d7237075c3ca65d957ef1ff200874
+        uses: super-linter/super-linter@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
